@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ma.rest.mapper.dao.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.ma.rest.base.model.Goods">
+    <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_title" jdbcType="INTEGER" property="goodsTitle" />
+    <result column="amount" jdbcType="VARCHAR" property="amount" />
+    <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="pic_details" jdbcType="VARCHAR" property="picDetails" />
+    <result column="param_details" jdbcType="VARCHAR" property="paramDetails" />
+    <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+    <result column="member_type" jdbcType="VARCHAR" property="memberType" />
+    <result column="is_choice" jdbcType="VARCHAR" property="isChoice" />
+    <result column="mod_time" jdbcType="VARCHAR" property="modTime" />
+    <result column="add_time" jdbcType="VARCHAR" property="addTime" />
+    <result column="goods_number" jdbcType="INTEGER" property="goodsNumber" />
+  </resultMap>
+    <resultMap id="ROGBaseResultMap" type="com.ma.rest.base.model.Goods">
+        <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+        <result column="goods_title" jdbcType="INTEGER" property="goodsTitle" />
+        <result column="amount" jdbcType="VARCHAR" property="amount" />
+        <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="pic_details" jdbcType="VARCHAR" property="picDetails" />
+        <result column="param_details" jdbcType="VARCHAR" property="paramDetails" />
+        <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+        <result column="member_type" jdbcType="VARCHAR" property="memberType" />
+        <result column="is_choice" jdbcType="VARCHAR" property="isChoice" />
+        <result column="mod_time" jdbcType="VARCHAR" property="modTime" />
+        <result column="add_time" jdbcType="VARCHAR" property="addTime" />
+        <result column="goods_number" jdbcType="INTEGER" property="goodsNumber" />
+        <association property="maUserInfo" javaType="com.ma.rest.pojo.MaUserInfo">
+            <id column="user_id" property="userId" jdbcType="INTEGER" />
+            <result column="nickname" property="nickName" jdbcType="VARCHAR" />
+            <result column="phone" property="phone" jdbcType="VARCHAR" />
+            <result column="head_img" property="headImg" jdbcType="VARCHAR" />
+            <result column="user_token" property="userToken" jdbcType="VARCHAR" />
+            <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
+            <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+            <result column="appVersion" property="appVersion" jdbcType="VARCHAR" />
+            <result column="status" property="status" jdbcType="VARCHAR" />
+            <result column="back_img" property="backImg" jdbcType="VARCHAR" />
+            <result column="category_id" property="categoryId" jdbcType="VARCHAR"/>
+            <result column="type" property="type" jdbcType="VARCHAR"/>
+            <result column="sign" property="sign" jdbcType="VARCHAR"/>
+            <result column="business_introduction" property="businessIntroduction" jdbcType="VARCHAR"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="BaseCategoryResultMap" type="com.ma.rest.base.model.GoodsCategory">
+        <id column="category_id" jdbcType="INTEGER" property="categoryId" />
+        <result column="category_name" jdbcType="VARCHAR" property="categoryName" />
+        <result column="pid" jdbcType="INTEGER" property="pid" />
+        <result column="category_title" jdbcType="VARCHAR" property="categoryTitle" />
+        <result column="category_pic" jdbcType="VARCHAR" property="categoryPic" />
+    </resultMap>
+
+    <resultMap id="DetailBaseResultMap" type="com.ma.rest.base.model.Goods">
+        <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+        <result column="goods_title" jdbcType="INTEGER" property="goodsTitle" />
+        <result column="amount" jdbcType="VARCHAR" property="amount" />
+        <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="pic_details" jdbcType="VARCHAR" property="picDetails" />
+        <result column="param_details" jdbcType="VARCHAR" property="paramDetails" />
+        <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+        <result column="member_type" jdbcType="VARCHAR" property="memberType" />
+        <result column="is_choice" jdbcType="VARCHAR" property="isChoice" />
+        <result column="mod_time" jdbcType="VARCHAR" property="modTime" />
+        <result column="add_time" jdbcType="VARCHAR" property="addTime" />
+        <result column="userId" property="userId" jdbcType="INTEGER" />
+        <association property="maUserInfo" javaType="com.ma.rest.pojo.MaUserInfo">
+            <id column="user_id" property="userId" jdbcType="INTEGER" />
+            <result column="nickname" property="nickName" jdbcType="VARCHAR" />
+            <result column="phone" property="phone" jdbcType="VARCHAR" />
+            <result column="head_img" property="headImg" jdbcType="VARCHAR" />
+            <result column="user_token" property="userToken" jdbcType="VARCHAR" />
+            <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
+            <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+            <result column="appVersion" property="appVersion" jdbcType="VARCHAR" />
+            <result column="status" property="status" jdbcType="VARCHAR" />
+            <result column="back_img" property="backImg" jdbcType="VARCHAR" />
+            <result column="category_id" property="categoryId" jdbcType="VARCHAR"/>
+            <result column="type" property="type" jdbcType="VARCHAR"/>
+            <result column="sign" property="sign" jdbcType="VARCHAR"/>
+            <result column="business_introduction" property="businessIntroduction" jdbcType="VARCHAR"/>
+        </association>
+        <collection property="comments" ofType="com.ma.rest.pojo.Comment">
+            <result column="id" property="id" jdbcType="INTEGER" />
+            <result column="topic_id" property="topicId" jdbcType="INTEGER" />
+            <result column="topic_type" property="topicType" jdbcType="VARCHAR" />
+            <result column="content" property="contnet" jdbcType="VARCHAR" />
+            <result column="from_uid" property="fromUid" jdbcType="INTEGER" />
+            <result column="reply_time" property="commentTime" jdbcType="TIMESTAMP" />
+            <result column="comment_pic" property="commentPic" jdbcType="VARCHAR"/>
+            <association property="maUserInfo" javaType="com.ma.rest.pojo.MaUserInfo">
+                <id column="comUserId" property="userId" jdbcType="INTEGER" />
+                <result column="comNickName" property="nickName" jdbcType="VARCHAR" />
+                <result column="comPhone" property="phone" jdbcType="VARCHAR" />
+                <result column="comHeadImg" property="headImg" jdbcType="VARCHAR" />
+                <result column="comType" property="type" jdbcType="VARCHAR" />
+            </association>
+        </collection>
+    </resultMap>
+
+    <resultMap id="WODEBaseResultMap" type="com.ma.rest.base.model.Goods">
+        <id column="goods_id" jdbcType="INTEGER" property="goodsId" />
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+        <result column="goods_title" jdbcType="INTEGER" property="goodsTitle" />
+        <result column="amount" jdbcType="VARCHAR" property="amount" />
+        <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="pic_details" jdbcType="VARCHAR" property="picDetails" />
+        <result column="param_details" jdbcType="VARCHAR" property="paramDetails" />
+        <result column="discount_price" jdbcType="DECIMAL" property="discountPrice" />
+        <result column="member_type" jdbcType="VARCHAR" property="memberType" />
+        <result column="is_choice" jdbcType="VARCHAR" property="isChoice" />
+        <result column="mod_time" jdbcType="VARCHAR" property="modTime" />
+        <result column="add_time" jdbcType="VARCHAR" property="addTime" />
+        <association property="maUserInfo" javaType="com.ma.rest.pojo.MaUserInfo">
+            <id column="user_id" property="userId" jdbcType="INTEGER" />
+            <result column="nickname" property="nickName" jdbcType="VARCHAR" />
+            <result column="phone" property="phone" jdbcType="VARCHAR" />
+            <result column="head_img" property="headImg" jdbcType="VARCHAR" />
+            <result column="user_token" property="userToken" jdbcType="VARCHAR" />
+            <result column="reg_time" property="regTime" jdbcType="TIMESTAMP" />
+            <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+            <result column="appVersion" property="appVersion" jdbcType="VARCHAR" />
+            <result column="status" property="status" jdbcType="VARCHAR" />
+            <result column="back_img" property="backImg" jdbcType="VARCHAR" />
+            <result column="category_id" property="categoryId" jdbcType="VARCHAR"/>
+            <result column="type" property="type" jdbcType="VARCHAR"/>
+            <result column="sign" property="sign" jdbcType="VARCHAR"/>
+            <result column="business_introduction" property="businessIntroduction" jdbcType="VARCHAR"/>
+        </association>
+    </resultMap>
+
+  <select id="selectGoodsCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+    select count(1) from ma_goods where  status!=0
+    <if test="goodsName!=null and goodsName!=''">
+      and goods_name like CONCAT('%', #{goodsName},'%' )
+    </if>
+
+  </select>
+
+  <select id="selectGoodsList" resultMap="BaseResultMap" parameterType="java.util.Map">
+    select
+          goods_id,
+          goods_name,
+          goods_title,
+          amount,
+          goods_img,
+          status,
+          DATE_FORMAT(add_time,'%Y-%m-%d %H:%i:%s') add_time,
+          category_id,
+          price,
+          pic_details param_details,
+          discount_price,
+          member_type,
+          is_choice,
+          DATE_FORMAT(mod_time,'%Y-%m-%d %H:%i:%s') mod_time
+          from ma_goods where  status=1
+
+      <if test="goodsName!=null and goodsName!=''">
+        and goods_name like CONCAT('%', #{goodsName},'%' )
+      </if>
+
+      limit #{page},#{limit}
+
+  </select>
+
+    <select id="selectSubCategoryList" resultMap="BaseCategoryResultMap" parameterType="java.lang.Integer">
+        select
+        category_id,
+        category_name,
+        category_title,
+        pid
+        from ma_goods_category where pid=#{pid} and status=0
+
+    </select>
+
+    <select id="selectFirstCategoryList" resultMap="BaseCategoryResultMap">
+        select
+        category_id,
+        category_name,
+        category_title,
+        category_pic,
+        pid
+        from ma_goods_category where pid=0 and status=0
+
+    </select>
+
+    <select id="selectGoodsByCategoryId" parameterType="java.util.Map" resultMap="BaseResultMap">
+         select
+          goods_id,
+          goods_name,
+          goods_title,
+          amount,
+          goods_img,
+          status,
+          DATE_FORMAT(add_time,'%Y-%m-%d %H:%i:%s') add_time,
+          category_id,
+          price,
+          pic_details  param_details,
+          discount_price,
+          member_type,
+          is_choice,
+          DATE_FORMAT(mod_time,'%Y-%m-%d %H:%i:%s') mod_time
+          from ma_goods where  status=1
+          <if test="categoryId!=null">
+            and category_id=#{categoryId}
+          </if>
+         <if test="userId!=null">
+            and userId=#{userId}
+         </if>
+          <if test="type!=null">
+             and  is_choice=1
+          </if>
+          order by add_time desc
+          LIMIT #{offset}, #{pageSize}
+    </select>
+
+
+    <select id="selectListByQueryCon" parameterType="java.util.Map" resultType="java.util.Map">
+        select
+        goods_id id,
+        goods_name name,
+        goods_title title,
+        goods_img  img
+        from ma_goods where  status=1
+        <if test="queryCon!=null">
+              and goods_name like CONCAT('%', #{queryCon},'%' )
+        </if>
+
+        order by add_time desc
+        LIMIT #{offset}, #{pageSize}
+    </select>
+
+
+    <select id="selectCountGoodsByCategoryId" parameterType="java.util.Map" resultType="java.lang.Integer">
+        select count(1)
+        from ma_goods where  status=1
+        <if test="categoryId!=null">
+            and category_id=#{categoryId}
+        </if>
+        <if test="userId!=null">
+            and userId=#{userId}
+        </if>
+        <if test="type!=null">
+            and  is_choice=1
+        </if>
+        order by add_time desc
+    </select>
+
+    <select id="selectgoodsInfoById" resultMap="DetailBaseResultMap" parameterType="Integer">
+        select
+          goods.goods_id,
+          goods.goods_name,
+          goods.goods_title,
+          goods.amount,
+          goods.goods_img,
+          goods.status,
+          DATE_FORMAT(goods.add_time,'%Y-%m-%d %H:%i:%s') add_time,
+          goods.category_id,
+          goods.price,
+          goods.pic_details param_details,
+          goods.discount_price,
+          goods.member_type,
+          goods.is_choice,
+          goods.userId,
+          DATE_FORMAT(goods.mod_time,'%Y-%m-%d %H:%i:%s') mod_time,
+          ma_user.user_id,
+          ma_user.nickname,
+          ma_user.phone,
+          ma_user.head_img,
+          ma_user.reg_time,
+          ma_user.last_login_time,
+          ma_user.status,
+          ma_user.back_img,
+          ma_user.type,
+          ma_user.category_id,
+          ma_user.sign,
+          ma_user.business_introduction,
+          comment.id,
+          comment.content, comment.from_uid, comment.reply_time,comment.comment_img comment_pic,
+          ma_usera.user_id comUserId,
+          ma_usera.nickname comNickName,
+          ma_usera.phone comPhone,
+          ma_usera.head_img comHeadImg,
+          ma_usera.type comType
+          from ma_goods goods
+            left JOIN ma_user_info ma_user
+          on goods.userId=ma_user.user_id
+          left JOIN ma_reply comment on comment.comment_id=goods.goods_id
+          left join ma_user_info ma_usera on ma_usera.user_id=comment.from_uid
+           where  goods.status=1 and goods.goods_id=#{goodsId}
+    </select>
+
+    <select id="selectgoodsById" resultMap="WODEBaseResultMap" parameterType="Integer">
+        select
+          goods.goods_id,
+          goods.goods_name,
+          goods.goods_title,
+          goods.amount,
+          goods.goods_img,
+          goods.status,
+          DATE_FORMAT(goods.add_time,'%Y-%m-%d %H:%i:%s') add_time,
+          goods.category_id,
+          goods.price,
+          goods.pic_details param_details,
+          goods.discount_price,
+          goods.member_type,
+          goods.is_choice,
+          goods.goods_number,
+          DATE_FORMAT(goods.mod_time,'%Y-%m-%d %H:%i:%s') mod_time,
+            ma_user.user_id,
+          ma_user.nickname,
+          ma_user.phone,
+          ma_user.head_img,
+          ma_user.user_token,
+          ma_user.reg_time,
+          ma_user.last_login_time,
+          ma_user.appVersion,
+          ma_user.status,
+          ma_user.back_img,
+          ma_user.type,
+          ma_user.category_id,
+          ma_user.sign,
+          ma_user.business_introduction
+          from ma_goods goods
+          left JOIN ma_user_info ma_user
+          on goods.userId=ma_user.user_id
+          where  goods.status=1 and goods.goods_id=#{goodsId}
+    </select>
+
+
+    <select id="queryOrderGoodsList" resultMap="ROGBaseResultMap" parameterType="java.lang.Integer">
+        select
+        gs.goods_id,
+        gs.goods_name,
+        gs.goods_title,
+        gs.amount,
+        gs.goods_img,
+        gs.status,
+        DATE_FORMAT(gs.add_time,'%Y-%m-%d %H:%i:%s') add_time,
+        gs.category_id,
+        gs.price,
+        gs.pic_details param_details,
+        gs.discount_price,
+        gs.member_type,
+        gs.is_choice,
+        gs.goods_number,
+        DATE_FORMAT(gs.mod_time,'%Y-%m-%d %H:%i:%s') mod_time,
+         ma_user.user_id,
+          ma_user.nickname,
+          ma_user.phone,
+          ma_user.head_img,
+          ma_user.user_token,
+          ma_user.reg_time,
+          ma_user.last_login_time,
+          ma_user.appVersion,
+          ma_user.status,
+          ma_user.back_img,
+          ma_user.type,
+          ma_user.category_id,
+          ma_user.sign,
+          ma_user.business_introduction
+        from ma_order mo left join rel_order_goods rog
+        on mo.id=rog.order_id
+        left join
+        ma_goods gs on gs.goods_id=rog.goods_id
+         left JOIN ma_user_info ma_user
+          on gs.userId=ma_user.user_id
+         where 1=1 and gs.status!=0 and
+         mo.id=#{orderId}
+    </select>
+
+
+    <update id="updateGoods" parameterType="com.ma.rest.base.model.Goods">
+        update  ma_goods
+        <trim prefix="set " suffixOverrides="," >
+            <if test="goodsName!=null">
+                goods_name=#{goodsName},
+            </if>
+            <if test="goodsTitle!=null">
+                goods_title=#{goodsTitle},
+            </if>
+            <if test="amount!=null">
+                amount=#{amount},
+            </if>
+            <if test="goodsImg!=null">
+                goods_img=#{goodsImg},
+            </if>
+            <if test="status!=null">
+                status=#{status},
+            </if>
+            <if test="categoryId!=null">
+                category_id=#{categoryId},
+            </if>
+            <if test="price!=null">
+                price=#{price},
+            </if>
+            <if test="picDetails!=null">
+                pic_details=#{picDetails},
+            </if>
+            <if test="paramDetails!=null">
+                param_details=#{paramDetails},
+            </if>
+
+            <if test="discountPrice!=null">
+                discount_price=#{discountPrice},
+            </if>
+            <if test="memberType!=null">
+                member_type=#{memberType},
+            </if>
+            <if test="isChoice!=null">
+                is_choice=#{isChoice},
+            </if>
+            <if test="goodsNumber!=null">
+                goods_number=#{goodsNumber},
+            </if>
+            mod_time=now(),
+        </trim>
+        where goods_id=#{goodsId}
+    </update>
+
+</mapper>

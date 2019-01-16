@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+	    http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!-- <aop:aspectj-autoproxy/> -->
+	<context:annotation-config />
+	<context:component-scan base-package="com.ma.rest.controller" />
+	<mvc:annotation-driven conversion-service="conversionService">
+		<mvc:message-converters>
+			<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
+			<bean id="mappingJacksonHttpMessageConverter"
+				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<!-- 如果使用了RESTful形式的拦截，那么对于静态资源的处理上，就需要加上此句，静态资源（没有映射的）就会 -->
+    <mvc:default-servlet-handler />
+    <bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" />
+
+ 	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+                <bean class="com.ma.rest.utils.DateConverter" />
+			</list>
+		</property>
+	</bean>
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="104857600"></property>
+		<property name="maxInMemorySize" value="40960"></property>
+	</bean>
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:resource/*.properties</value>
+		</property>
+		<property name="fileEncoding" value="UTF-8" />
+
+	</bean>
+</beans>

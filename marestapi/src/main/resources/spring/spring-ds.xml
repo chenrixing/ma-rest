@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 数据库连接 -->
+    <bean id="datasource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="timeBetweenEvictionRunsMillis" value="90000" />
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="3" />
+        <property name="minIdle" value="3" />
+        <property name="maxActive" value="60" />
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="30000" />
+    </bean>
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="datasource" />
+        <property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
+        <property name="mapperLocations" value="classpath:com/ma/rest/mapper/xml/*Mapper*"/>
+        <property name="typeAliasesPackage" value="com.ma.rest.pojo" />
+    </bean>
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ma.rest.mapper.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
+    </bean>
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="datasource" />
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans> 
