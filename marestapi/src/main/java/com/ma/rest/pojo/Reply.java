@@ -85,4 +85,104 @@ public class Reply implements Serializable {
     private Integer matchStar;
 
     private String commentImg;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(Integer commentId) {
+        this.commentId = commentId;
+    }
+
+    public Integer getReplyId() {
+        return replyId;
+    }
+
+    public void setReplyId(Integer replyId) {
+        this.replyId = replyId;
+    }
+
+    public String getReplyType() {
+        return replyType;
+    }
+
+    public void setReplyType(String replyType) {
+        this.replyType = replyType;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Integer getFromUid() {
+        return fromUid;
+    }
+
+    public void setFromUid(Integer fromUid) {
+        this.fromUid = fromUid;
+    }
+
+    public Integer getToUid() {
+        return toUid;
+    }
+
+    public void setToUid(Integer toUid) {
+        this.toUid = toUid;
+    }
+
+    public Date getReplyTime() {
+        return replyTime;
+    }
+
+    public void setReplyTime(Date replyTime) {
+        this.replyTime = replyTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Integer getGoodsStar() {
+        return goodsStar;
+    }
+
+    public void setGoodsStar(Integer goodsStar) {
+        this.goodsStar = goodsStar;
+    }
+
+    public Integer getServiceStar() {
+        return serviceStar;
+    }
+
+    public void setServiceStar(Integer serviceStar) {
+        this.serviceStar = serviceStar;
+    }
+
+    public Integer getMatchStar() {
+        return matchStar;
+    }
+
+    public void setMatchStar(Integer matchStar) {
+        this.matchStar = matchStar;
+    }
+
+    public String getCommentImg() {
+        return commentImg;
+    }
+
+    public void setCommentImg(String commentImg) {
+        this.commentImg = commentImg;
+    }
 }
