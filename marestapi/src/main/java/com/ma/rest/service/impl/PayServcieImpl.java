@@ -29,13 +29,13 @@ public class PayServcieImpl implements PayService {
     public static String service = "mobile.securitypay.pay";//固定值
 
     //appId
-    public static String appId = "2016091600526479";
+    public static String appId = "2088231437167811";
 
     //private key
-    public static String appPrivateKey = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCRBxfdt3jGxeIPEkovohXoHyrQkxzY38TbgA0q/5yUUEpENLRkwHcN4iWO1fWoOEmEcI+Ty7YdcqjvMePk63JtDa9X+Wsu4L96xjCCwKQ8pgSYkqA1kR54IffeJ3X+mhGOxQWzOxohPYwliKZmYYcJH9R/r1KiabOW+I93m0DQEE/6pDX7DgsLrhFv+jAkThpEVWod0B5RP3SANWQi6BmgFzmF5OcfqtvZqxyNxJyOqY6fklLf2ln1n0yLiiN78SfCnaoImHx8DT4h1K6eIY5xRrQ7m2O3SCixPw37ZRYPHiqESsoiWqmqlQST2FXhf0JCw/76QaICaJklzg5GuBfXAgMBAAECggEAN6gwOY+S0z3X/o63V8Ztf9KOPNNoa7acttxSsWC9d5HEnp5XaJ8QUYyre0CTcUaAuEn2X/L65hw9xuYvnofZNw7cbveycaAg+/4ZWeSSYxAXjXIf987Ekbf/hws/1kDMYi0sfdc9tOoI4dKqgXoGN7M2evYO0XOdT1/+txkm63HytZ4MKOn6OtZpBNwxpMoqQ870u9MdZ/mdp1IF15IhO/PppZY6wwWTPizeKX/iCmp5sVHdBZQ0w1+h52uA5zYdGfcg+xZL7pcYX4MU2Cn2mmEdfg/rUABttTEvuk7HvHaRkmExQWAr3YbmDxZw+kdC0ZWVEjRyJ894srT6rxwSeQKBgQDSkJ2cUihb7EabJft4pUA1X4MoaTA3FN/yfaHaBholwoEZsaRcqP5CRG8WclP7Rtk1/IMxGmVNtOxtc1Acamrk4KDuEIxFXhNDSKUzxGvOu5GwdGHz3chkdaXRISeokOOKalijDtSFgGWw6EdybipEIhy7EgUdt1vsJ+koXbbclQKBgQCwUkWGr/hJ+GyQHo+iKYvkuzL3q1KvyEbRi7HJ1Y4dadhPJNtp6PxbK7kIdGZYHUCQNrkzjHchh7XSBl6QsfVJD3Eyi+iE3znCRR0nqKv61/C5KF0uGN+KCS95N15F+kLpDSTLZH1ioilYmMLaq1eL59+d+AnS9dlR5wGEH8xbuwKBgQCPWpmTNXP4sTGYqxE7n/XI4I/g0UxcE8ArzVCFqKXgkz1lisWFuB/yabjfpVJ7vk5fLNz8byYM82ILWfhugBzqWev2aBm3mEaxBiJCzjU/d//GDFYruxCVJGuRp2rinlHriF90E8KoaTPSbzFFPK9V14uL6MbG5nCUpM9eBf9ayQKBgD6nfX022ouucyVjNrbw/Hzy6FGJ14APMtsTQMHv2OgqzGqTNkSUPdhH2SBf/F4jRuX4DCd9KngHuVxAVyojkn27twW3IZDVobiexpVpInOoeCnTZgkTXZu3V99DBYToQQ5/VSvRMZzy8q5A2jzJ1fopExUXJqaIJgkshSVmB0AxAoGAG/AOXoZR0MJ2bIl/IK9ECVQrUSZMHsfwmdAjbOfIL3j9pgeJf41i94dSTDL7KL55955+Iw78TmkaZEY7cbff3OE1NdAZ7CWn5U+qjAMk0eMxwFKP8k9sDCX/zvd5H4xxSIL61C3Ul6cciNyvPwb/raopQ62MHNnzMfutfoOZpEE=";
+    public static String appPrivateKey = "MIICXAIBAAKBgQCodmnHmWYXc88KbFcvo0kMOBENkem3su207ZH8CZq8cb5ZixVzVNwWPMjBMCqHFPpwvywPLIFysNcImZFawHnVMcQ04juTwb40b3hfKviXyXlHjnrYvCy0iBzwQIxIHl5MXUTgmOxp9xorHZlO8YnSddVrXvnf8QJIJwt43GWviwIDAQABAoGAVUVi88KE97gKA7elRhq7vfCfSSQjjnWGdv+N1mqyJVLZzA9nszIwGR15bLhJvohy4CEUVzXq7DfxEIxTFAG7aMlBVvtaEYfqE2IPrAICOmNE3i7KDlrvHymMoNDq/pIP14fNViOKWW3Bn0w4kJkJ7fn3wVmamVLVhofqS+0URdkCQQDaUqG73RfQaz1uPjDsKXYhRC4gTcOIFCE+Eh8iEr9bgp6fGKHK0EE8VAOvI9/wcBYjdpwNvkQJZisX+iNjUkGlAkEAxYj8mVadFIJsP/uCZyr2TmDQNoavaDS9+aOi28EFl8UvuZzwWpS5URR5gxCCsZg+BDajyEMYXPMk9TGL3jcFbwJAdMFMDROn8KXpLFPGBgYGTrQPlub/cn6RaIh4bdhozZ+FBMA/hh7pREIJ1lfxIrxOmpiLzC28ZOpmkWQMGMmcoQJBAKkngm/ozMC4YuxzexrPnnZFz2cx9Nk+eQRijV6zrw9la1X+P5DB1OPKrbd/lvtvzIOdKqmeUymdiSNy1zxmT38CQGVHWtKUTnHG0S1Xs7DN84PVMDVEooS68ssfzeO8eWaTsjRJz4LGOpdTix1bn5drChKjyFVwtffseyXWveuDcwA=";
 
     //public key  支付宝的公钥，无需修改该值（不要删除也不要修改，在接收通知的时候需要进行签名认证）
-    public static String alipayPublicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4Xzp7bnzKgzL2KCzAuJyCcCUzI8X1YJdsHV1rs4avD1fLue+6d6V7nBRY4P8lBjETU6rl7ywWVofUjBVygEvXe5FyZRJTjYA0F93vLWi8fsORxhD19tfknysnucchp2eREf6HNfr990wkhnMvM4SAqpZjKigqIxk1RMQEbKeMSZts+T/JJCTp6DGo7+/8deV+RXoiOC3Dx/HfZhYZ8FxnVoJo0K4+acrOltp5eIAXG6EbAXC84UOJe0XUm8y82BZsX9aUdPDtWONZTz+7+2arb4PJN8CSeaN8nueHQWdd9wyCmyw80YWGesYudJgdbARwrnKed2b8F+si8ES+byWuQIDAQAB";
+    public static String alipayPublicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCodmnHmWYXc88KbFcvo0kMOBENkem3su207ZH8CZq8cb5ZixVzVNwWPMjBMCqHFPpwvywPLIFysNcImZFawHnVMcQ04juTwb40b3hfKviXyXlHjnrYvCy0iBzwQIxIHl5MXUTgmOxp9xorHZlO8YnSddVrXvnf8QJIJwt43GWviwIDAQAB";
 
     // 字符编码格式 目前支持 gbk 或 utf-8
     public static String input_charset = "utf-8";
@@ -43,7 +43,7 @@ public class PayServcieImpl implements PayService {
     public static String sign_type = "RSA2";
 
     //支付宝回调地址这个地址目前访问不到 是外网地址才可以
-    public static String notify_url = "http://120.77.214.155:8080/ma-rest/pay/order-pay-notify-controller";
+    public static String notify_url = "http://47.110.133.248:8081/ma-rest/pay/order-pay-notify-controller";
 
     @Override
     @Transactional
@@ -53,7 +53,7 @@ public class PayServcieImpl implements PayService {
         //编码格式
         String CHARSET = "utf-8";
         //正式环境支付宝网关，如果是沙箱环境需更改成https://openapi.alipaydev.com/gateway.do
-        String url = "https://openapi.alipay.com/gateway.do";
+        String url = "https://openapi.alipaydev.com/gateway.do";
         //实例化客户端
         AlipayClient alipayClient = new DefaultAlipayClient(url, appId, appPrivateKey, "json", CHARSET, alipayPublicKey, sign_type);
         //实例化具体API对应的request类,类名称和接口名称对应,当前调用接口名称：alipay.trade.app.pay
